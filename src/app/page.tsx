@@ -15,6 +15,7 @@ import {
   Linkedin,
   Instagram
 } from 'lucide-react';
+import Image from 'next/image'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,7 +94,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <img src="/images/logo.png" alt="AARA Analytics Logo" className="h-12 w-auto" />
+              <Image src="/images/logo.png" 
+			  alt="AARA Analytics Logo" 
+			  width={150}  // Specify the width
+			  height={50}  // Specify the height
+			  className="h-12 w-auto" />
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -217,9 +222,11 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2">
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img 
+                    <Image 
                       src="/images/dashboards/dashboard-1.png" 
                       alt="Market Overview Dashboard" 
+					    width={600}  // Recommended: use actual image dimensions
+                        height={400} 
                       className="w-full h-auto"
                       style={{
                         filter: 'blur(4px)',
@@ -235,9 +242,11 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img 
+                    <Image 
                       src="/images/dashboards/dashboard-2.png" 
-                      alt="Regional Performance Dashboard" 
+                      alt="Regional Performance Dashboard"
+					    width={600}  // Recommended: use actual image dimensions
+                        height={400} 
                       className="w-full h-auto"
                       style={{
                         filter: 'blur(4px)',
@@ -251,9 +260,11 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img 
+                    <Image 
                       src="/images/dashboards/dashboard-3.png" 
-                      alt="Competitive Analysis Dashboard" 
+                      alt="Competitive Analysis Dashboard"
+					    width={600}  // Recommended: use actual image dimensions
+                        height={400} 
                       className="w-full h-auto"
                       style={{
                         filter: 'blur(4px)',
