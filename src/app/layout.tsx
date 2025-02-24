@@ -1,18 +1,19 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
-import type { Metadata } from 'next'
-
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AARA Analytics - Telangana Vehicle Registration Insights',
-  description: 'Access comprehensive vehicle registration data analytics for Telangana through interactive Power BI dashboards.',
-  viewport: 'width=device-width, initial-scale=1',
+  title: 'AARA Analytics',
+  description: 'Vehicle Registration Analytics',
+  metadataBase: new URL('https://aara-analytics.vercel.app'), // Replace with your actual domain
   openGraph: {
     title: 'AARA Analytics',
-    description: 'Vehicle Registration Analytics for Telangana',
-    type: 'website'
+    description: 'Vehicle Registration Analytics',
   }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -22,9 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
