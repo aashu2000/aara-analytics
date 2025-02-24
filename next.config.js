@@ -1,8 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['api.placeholder.com'], // Add any image domains you need
+    unoptimized: false,
+    domains: [
+      'api.placeholder.com',
+      'localhost',
+      'vercel.app'
+    ],
   },
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production'
+  }
 }
 
 module.exports = nextConfig
